@@ -29,9 +29,9 @@ body > div{
     text-transform: uppercase;
     transition: all 0.2s; /* lo que tarda en hacer el cambio de color */
     font-size: 20px;
-    border: 2px solid white;
-    color: white;
-    background-color: gray;
+    border: 2px solid skyblue;
+    color: skyblue;
+    /*background-color: gray;*/
     text-decoration: none;
 }
 #btn_cita:hover { /* le decimos que cambie de color cuando pase por encima */
@@ -104,8 +104,8 @@ span{
     text-transform: uppercase;
     transition: all 0.2s; /* lo que tarda en hacer el cambio de color */
     font-size: 20px;
-    border: 2px solid darkgray;
-    color: darkgray;
+    border: 2px solid skyblue;
+    color: skyblue;
     text-decoration: none;
 }
 .boton a:hover { /* le decimos que cambie de color cuando pase por encima */
