@@ -1,0 +1,352 @@
+ /*-------------------- VERSION MOVIL -------------------------------------*/
+ h2 {
+     text-align: center;
+     font-size: 20px;
+     text-transform: uppercase;
+ }
+
+ span {
+     color: black;
+ }
+ 
+#introduccion {
+    display: grid;
+}
+
+.grid_1 {
+    justify-self: center;
+}
+
+#introduccion > div p {
+    color: gray;
+    width: 300px;
+    text-align: center;
+}
+
+#introduccion div {
+    display: grid;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.img_intro {
+    justify-self: center;
+    width: 300px;
+}
+ 
+/*--------- Residuos taller -----------*/
+
+ #residuos_taller {
+    background-color: royalblue;
+    display: grid;
+}
+
+#residuos_taller h2 {
+    color: white;
+}
+
+#residuos_taller div{
+    display: grid;
+}
+
+
+#residuos_taller p {
+    color: white;
+    width: 300px;
+    justify-self: center;
+}
+
+#residuos_taller > div li{
+    width: 280px;
+    justify-self: center;
+    color: white;
+}
+
+.img_residuos {
+    width: 300px;
+    justify-self: center;
+    margin-bottom: 30px;
+}
+
+/*------------Normativa---------*/
+#normativa {
+    display: grid;
+}
+
+#normativa p {
+    justify-self: center;
+    width: 300px;
+    color: gray;
+}
+.ul_nor {
+    width: 280px;
+    color: gray;
+}
+
+.ul_nor a{ /*le damos color a los enlaces */
+    text-decoration: none;
+    color:royalblue;  
+}
+
+.ul_nor a:hover {
+    color: darksalmon;
+    text-decoration: underline;
+}
+ 
+ 
+ /*----------- Obligaciones ----------*/
+#obligaciones {
+    background-color: royalblue;
+    display: grid;
+}
+
+#obligaciones div {
+    display: grid;
+}
+
+#obligaciones > div p {
+    color: white;
+    width: 300px;
+    justify-self: center;
+}
+
+#obligaciones > div li {
+    width: 280px;
+    justify-self: center;
+    color: white;
+}
+
+#obligaciones h2 {
+    color: white;
+}
+
+.img_res {
+    width: 300px;
+    justify-self: center;
+}
+
+/*-------- Tipo Residuos --------*/
+
+#tipos {
+    display: grid;
+}
+
+#tl_residuos {
+    justify-self: center;
+}
+ 
+/* CSS Tabla distintos residuos */
+#tl_residuos th{ /* le damos un estilo a la cabecera para diferenciar del cuerpo */
+    padding: 5px;
+    font-size: 16px;
+    background-color: #83aec0;
+    /* le ponemos una imagen de color de fondo para que parezca degradado */
+    background-image: url(../Imagenes/fondo_th.png);
+    /* hacemos que se repita la imagen en el eje x */
+    background-repeat: repeat-x;
+    color: white;
+    /* le añadimos bordes y colores distintos */
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-right-color: #558FA6;
+    border-bottom-color: #558FA6;
+    font-family: “Trebuchet MS”, Arial;
+    /* hacemos que el texto salga en mayusculas */
+    text-transform: uppercase;
+}
+
+#tl_residuos td {
+    background-image: url(../Imagenes/fondo_tr01.png);
+    background-position: left top;
+    font-size: 15px;
+    font-weight:bold;
+    text-align: center;
+    background-color: #e2ebef;
+    background-repeat: repeat-x;
+    color: #34484E;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-right-color: #A4C4D0;
+    border-bottom-color: #A4C4D0;
+    }
+
+
+/*-------------------------------------------version tablet------------------------------------*/
+@media (min-width:600px){
+
+    #introduccion {
+        display: grid;
+        grid-template-areas: "a b";
+    }
+
+    #grid_1 {
+        grid-area: a;
+    }
+
+    #imagen {
+        grid-area: b;
+    }
+
+    .img_intro {
+        margin-top: 70px;
+    }
+
+ /*--------- Residuos taller -----------*/
+    #residuos_taller {
+        grid-template-areas: "h2 h2"
+                             "a b"
+                             "c c" ;
+    }
+
+    #residuos_taller h2{
+        grid-area: h2;
+    }
+
+    #re_solidos {
+        grid-area: a;
+    }
+
+    #re_ambientales {
+        grid-area: b;
+    }
+
+    .img_residuos {
+         grid-area: c;
+         width: 600px;
+    }
+
+/*--------- Normativa -----------*/
+    #normativa p  {
+        text-align: left;
+        width: 90%;
+    }
+
+    .ul_nor {
+        width: 650px;
+    }
+
+/*--------- Obligaciones--------*/
+
+    #obligaciones {
+        grid-template-areas: "h2 h2"
+                              "a  b"  ;
+    }
+
+    #obligaciones h2 {
+        grid-area: h2;
+    }
+
+    #area1 {
+        grid-area: a;
+    }
+
+    #area2 {
+        grid-area: b;
+    }
+
+    .img_res {
+        margin-bottom: 40px;
+    }
+
+}
+
+/*-----------------------------------------------------------Versión Web-------------------------------------------------------*/
+@media only screen and (min-width:1200px){
+
+    .tl_residuos {
+        width: 1000px;
+    }
+
+    #introduccion {
+        display: list-item;
+    }
+
+    #introduccion > div p {
+        width: 90%;
+        justify-self: center;
+    }
+
+    .grid_1 {
+        display: grid;
+    }
+
+
+    .img_intro {
+        width: 600px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+
+/*--------- Residuos taller --------*/
+    .residuos_taller {
+        grid-template-areas: none;
+        display: list-item;
+    }
+
+    #residuos_taller p {
+        width: 600px;
+    }
+
+    #residuos_taller > div li{
+        width: 580px;
+    }
+
+    .ul_re {
+        display: grid;
+    }
+
+    .img_residuos {
+        justify-self: center;
+    }
+
+/*--------- Normativa -----------*/
+    .ul_nor {
+        width: 1000px;
+        justify-self: center;
+    }
+
+/*-------- Obligaciones -----------*/
+
+    #obligaciones {
+        display: flex; /* Utilizamos flex para ponerlo en una columna*/
+        flex-direction: column;
+    }
+   
+    #obligaciones > div p { 
+        width: 90%;  
+    }
+
+    #obligaciones > div li {
+        width: 90%;
+    }
+
+    #obligaciones h2 {
+        grid-area: none;
+    }
+
+    #area1 {
+        grid-area: none;
+    }
+
+    #area2 {
+        grid-area: none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

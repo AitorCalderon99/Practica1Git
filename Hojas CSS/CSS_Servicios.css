@@ -1,0 +1,167 @@
+h1 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+/*------------ Sección servicios--------------*/
+
+#servicios {
+    display:list-item; /*utilizamos este display para poner en fila los elementos*/
+}
+
+#servicios div {
+    display: grid;
+}
+
+#servicios img {
+    justify-self: center;
+}
+
+#servicios p {
+    color: gray;
+    text-align: center;
+    width: 270px;
+    height: 209px;
+    justify-self: center;
+}
+
+/*------------ servicios Adicionales --------------*/
+
+#adicionales {
+    background-color: royalblue;
+}
+
+#adicionales h2 {
+    color: white;
+    padding-top: 50px;
+}
+
+#a , #b , #c  {
+    display: grid;
+}
+
+#adicionales h4 {
+    font-size: 20px;
+    color: white;
+    margin: 5%;
+    margin-top: 0px;
+}
+
+#adicionales img {
+    justify-self: center;
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+#adicionales p {
+    text-align: center;
+    color: white;
+    margin: 5%;
+}
+
+/*------------ Otros  servicios --------------*/
+
+#grid_column div{
+    display: grid;
+}
+
+#grid_column p {
+    text-align: center; /* centramos el texto*/
+}
+
+#grid_column img {
+    justify-self: center; /* lo centramos horizontalmente*/
+}
+
+/*-------------------------------------------version tablet------------------------------------*/
+@media (min-width:600px){
+    #servicios {
+        display: grid; /*utilizamos el grid para separar en columnas iguales*/
+        grid-template-columns: repeat(2, 1fr);  /* le indicamos que se repita
+                                            el patrón de 2 columnas*/
+    }
+
+/*------------ servicios Adicionales --------------*/
+
+    #adicionales {
+        display: grid;
+        grid-template-areas: "h2 h2" /* Aqui utilizamos el grid area*/
+                             "a b"  /* Por eso necesitabamos los distintos ID/*/
+                             "c c";
+    }
+    #adicionales h2{
+        grid-area: h2;
+        margin-bottom: 2em;
+    }
+    #a {
+        grid-area: a;
+        width: 350px;
+    }
+    #b {
+        grid-area: b;
+        width: 350px;
+    }
+    #c {
+        grid-area: c;
+        width: 350px;
+        justify-self: center;
+    }
+
+/*------------ Otros  servicios --------------*/
+    #otros {
+        display: block;
+        justify-content: center;
+    }
+    #grid_column {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);  /* Aqui le damos un patrón de 3 columnas*/
+    }
+
+    #grid_column div {
+        justify-content: center;
+    }
+}
+
+/*-------------------------------Versión Web-------------------------------------*/
+@media only screen and (min-width:1200px){
+    #servicios {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);  /* Aqui le damos un patrón de 4 columnas*/
+    }
+/*------------ servicios Adicionales --------------*/
+
+    #adicionales {
+        display: grid;
+        grid-template-areas: "h2 h2 h2" /* Aqui utilizamos el grid area*/
+                              "a b c"; /* Por eso necesitabamos los distintos identificadores*/
+        justify-content: center; /*el contenedor se alinea en el centro*/
+                                 
+    }
+
+    .item_a ,.item_b ,.item_c { 
+        margin-top: 30px;
+    }
+
+    .p_white {
+        margin: 0%;
+        padding-bottom: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+/*-------------------- Otros  Servicios ----------------*/
+
+    .grid_column {
+        grid-template-columns: repeat(6, 200px);
+        justify-content: center;
+    }
+
+   
+  
+    
+    
+}

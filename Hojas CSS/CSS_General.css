@@ -1,0 +1,346 @@
+/*                     Elementos Comunes                 */
+
+body{
+    background: white; /* Le damos un color de fondo*/
+    font-family: 'Roboto', sans-serif; /* Cargamos la misma fuente en el body para todas las páginas*/
+}
+
+header{
+    background:royalblue; /*le damos un color de fondo a la barra de navegación*/
+    /*color:darksalmon;*/
+    position: relative;
+    display: flex;
+}
+
+header::after{ /* Usamos este pseudo elemento y el clear both para indicar que queremos todos
+    los elementos flotantes dentro del contenedor*/
+
+    content: ''; /* El contenido lo dejamos vacio*/
+    clear: both;
+    display: block;
+}
+
+h1 {
+    text-align: center; /* Alineamos todos los titulos en el centro*/
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+h3 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h4 {
+    text-align: center;
+}
+
+/*--------------------------------------- Version Movil ---------------------------------------------*/
+/*---------------Barra de Navegacion-----------------*/
+
+.logo{
+    margin: 0; /*como estaba en posicion relativa le damos margin 0 para posicionarlo arriba a la derecha*/
+}
+
+.container{
+    width: 100%; /* el contenedor de la barra de navegación siempre va a ocupar el 100% de la página*/
+    max-width: 400px; /*le damos un tamaño máximo fijo de 400px*/
+    margin: 0 auto; /* Para centrarlo*/
+}
+
+.site-nav{
+    position: absolute; /* Le damos una posición absoluta */ 
+    right:0; /*lo colocamos en la esquina superior derecha*/
+    background:royalblue; /* Le damos el mismo color que a la barra de navegación*/
+    clip-path: circle(0px at top right); /* le decimos que posición va a tener normal  */
+    transition: clip-path ease-in-out 700ms; /* le ponemos tiempo al efecto*/
+}
+
+.site-nav-open{ /*utilizamos la utilidad clip-path:*/
+    clip-path: circle(150% at top right); /* al hacer click se abre
+                                         de manera circular*/
+}
+
+.site-nav ul{
+    margin-top: 1%;
+    list-style: none; /* Eliminamos la decoración por defecto (los puntos de la lista)*/
+}
+
+.site-nav li{
+    border-bottom: 1px solid white; /* Le damos un borde para diferenciar los elementos de la lista*/
+}
+
+.site-nav li:last-child{/* ponemos este selector avanzado para que el ultimo 
+                           elemento no tenga borde*/
+    border-bottom: none;
+}
+
+.site-nav a{
+    color: white; /*Le damos color a los enlaces*/
+    display: block;
+    padding: 1em 3em; /*1 arriba y abajo, 3 derecha e izquierda*/
+    text-transform: uppercase; /* Transformamos el texto a mayusculas*/
+    text-decoration: none; /* Se le quita la decoración del enlace por defecto*/
+}
+
+.site-nav a:hover,
+.site-nav a:focus{ /*cuando pasemos por encima o hagamos foco en él*/
+    color: darksalmon;
+}
+
+/* le damos forma a los iconos de dentro del menu*/
+.site-nav--icon{
+    display: inline-block;
+    font-size: 1.5em; /*para el tamaño del texto*/
+    margin-right: 1em;
+    width: 1.1em;
+    text-align: right; /*alineamos el texto a la derecha*/
+    color:white;
+}
+
+/* Esto va a ser donde se coloque la hamburguesa de nuestro menú*/
+.menu-toggle{
+    padding: 1em;
+    position: absolute;
+    top: .5em;
+    right: .5em;   
+}
+
+/* Hacemos una animacion girando las lineas para que sean aspas*/
+.menu-open .hamburger{ /*con esta clase hacemos girar las aspas debemos enlazarlo
+    en el javascript*/
+    transform: rotate(45deg);
+}
+
+.menu-open .hamburger::before{
+    opacity: 0;
+}
+
+.menu-open .hamburger::after{
+    transform: translateY(-3px) rotate(-90deg);
+}
+
+/*configuramos el css para hacer un icono de menu tipo hambuerguesa*/
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    display: block;
+    background: white;
+    height: 3px;
+    width: 1.75em;
+    border-radius: 3px;
+    transition: all ease-in-out 500ms; /*le añadimos una transición a todos los elementos
+    de 500 milisegundos para que tarde un poco mas en girar las aspas*/
+}
+
+.hamburger::before{
+    transform: translateY(-6px); /*asi tenemos las 3 rayas de nuestro menu*/
+}
+
+.hamburger::after{
+    transform: translateY(3px); /*asi tenemos las 3 rayas de nuestro menu*/
+}
+
+/*----------------------Footer- Menú rápido Movil -----------------*/
+
+footer {
+    background-color: rgb(27, 27, 92);
+}
+
+#menu_rapido {
+    background-color:rgb(32, 52, 114);
+}
+
+#menu_rapido h2{
+    margin: 0px;
+    padding-top: 15px;
+    text-transform: uppercase;
+    color: white;
+}
+
+#redes a {
+    text-decoration: none;
+    color: white;
+}
+
+#redes p{
+    color:white;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#redes img {
+    width: 10%;
+    display: inline;
+    margin-left: 12%;     
+}
+
+#redes img:hover {
+  /*  -webkit-transform: scale(1.6); 
+    -moz-transform: scale(1.6);
+    -o-transform: scale(1.6);*/
+    transform: scale(1.6);
+}
+
+#enlaces h2{
+    padding-bottom: 20px;
+}
+
+#enlaces > div{ /* Seleccionamos el primer div dentro del articulo enlaces*/
+    display: grid;
+    grid-template-columns:repeat(2,1fr); /* Lo posicionamos en 2 columnas del mismo tamaño*/
+    gap: 10px; /* le damos un espacio dijo entre columnas de 10px*/
+    
+}
+
+#enlaces > div div {
+    justify-self: center;
+}
+
+#enlaces > div a{
+    text-transform: uppercase;
+    margin: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+#enlaces > div div:hover{
+    text-decoration: underline;
+    color: darksalmon;
+}
+
+#enlaces > div a:hover{
+    color: darksalmon;
+}
+
+#color {
+    text-decoration: none;
+    color: white;
+}
+
+#color:hover {
+    color: darksalmon;
+}
+   
+#contactanos ul {
+    color: white;
+    display: grid;
+}
+
+#contactanos ul i {
+    padding-right: 1em;
+}
+
+#contactanos li {
+    width: 300px;
+    list-style: none;
+    gap: 10px;
+    color: white;
+}
+
+footer > p{
+    color:white;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+footer > p a{
+    color: white;
+    text-decoration: none;
+}
+
+
+/*-------------------------------------------version tablet------------------------------------*/
+@media (min-width:600px){
+
+    .container{
+        margin-left: 20px;
+    }
+   
+   /*----------------------Footer- Menú rápido -----------------*/ 
+
+   #menu_rapido {
+       display: grid;
+       grid-template-areas: "a b"
+                            "c c";
+   }
+
+   #redes img {
+       width: 8%;
+   }
+
+   #redes {
+       grid-area: a;
+   }
+   #enlaces {
+       grid-area: b;
+   }
+   #contactanos {
+       grid-area: c;
+       justify-self: center;
+   }
+
+  
+}
+
+/*-------------------------------Versión Web-------------------------------------*/
+
+@media only screen and (min-width:1200px){
+    .container {
+        width: 10vw;
+    }
+
+    .menu-toggle{
+        display:none ; /*con esto eliminamos la hamburguesa*/
+    } 
+
+    .site-nav{
+        height: auto;
+        position: relative;
+        background: transparent;
+        float: right;
+        margin-right: 1em;
+        clip-path: initial;
+        margin-top: 1.7em;
+    } 
+
+    .site-nav li{
+        display: inline-block; /*Ponemos los elementos en linea*/
+        border: none; /*Quitamos los bordes*/
+    }
+  
+    .site-nav a{
+        padding: 0;
+        margin-left: 3em;
+    }
+
+    /*.site-nav--icon{  si no queremos que se vean los iconos
+        display: none;
+    }*/
+
+    .site-nav a:hover,
+    .site-nav a:focus{
+        background: transparent;
+    }
+
+    /*----------------------Footer- Menú rápido -----------------*/ 
+    #menu_rapido {
+        grid-template-areas:"a b c";
+        width: 100%;
+                    
+    }
+    #redes img {
+        width: 7%;
+    }
+    #redes {
+        width: 40vw;
+    }
+
+ 
+   
+}

@@ -1,0 +1,228 @@
+
+ /*-------------------- VERSION MOVIL -------------------------------------*/
+ 
+ /*---------------------- inicio -----------------*/
+
+ /* ponemos un selector avanzado para poner un fondo al primer div del body*/
+body > div{
+    background-image: url('../Imagenes/Portada_movil.png'); /*Ponemos para cada dispositivo una imagen distinta*/
+    background-repeat:no-repeat;
+    height: 600px; /*le damos un largo fijo */
+    display: grid; /*Le ponemos un grid para poder centrar a los hijos*/
+}
+#texto1{
+    padding:  5%;
+    font-size: 15px; /*todos los tamaños de texto van fijos en px para mantener la uniformidad*/
+    text-transform: uppercase; /*trasformamos en mayusculas*/
+    color: white;
+}
+#texto2{
+    padding: 10%;
+    font-size: 20px;
+    color: white;
+}
+#btn_cita{
+    padding: 1em;
+    justify-self: center; /*centramos el boton en horizontal*/
+    align-self: center;
+    text-transform: uppercase;
+    transition: all 0.2s; /* lo que tarda en hacer el cambio de color */
+    font-size: 20px;
+    border: 2px solid white;
+    color: white;
+    background-color: gray;
+    text-decoration: none;
+}
+#btn_cita:hover { /* le decimos que cambie de color cuando pase por encima */
+     background-color: darksalmon;
+     border: 2px solid darksalmon;
+     color:white;
+}
+
+ /* ---------------Seción informacion---------------*/
+
+#informacion {
+    display: block; /*le ponemos el display block para que se alinen directamente*/
+}
+#informacion p{
+    text-align: center;
+}
+#informacion > article > p:first-child{ /* En los primeros hijos hacemos una transformación 
+    para el texto, lo ponemos en mayúculas*/
+    text-transform: uppercase;
+}
+span{
+    color: black;
+}
+.gris{
+    color: gray;
+}
+#telefono{
+    color: royalblue; /*le asisnamos un id para cambiarle el color*/
+}
+
+/*--------- Sección Servicios-------------------*/
+
+#servicios h2{
+    text-transform: uppercase;
+} 
+#servicios > p {
+    color: gray;
+    font-size: 18px;
+    text-align: center;
+}
+.iconos {
+    display: grid; /*utilizamos grid para poder centrar todos los elementos con justify*/
+}
+.iconos > div {
+    display: grid;
+}
+.iconos > div >img {
+    justify-self: center;
+}
+.iconos p {
+    text-align: center;
+}
+/* CAMBIAR aqui hay que utilizar otras herramientas para centrar no hace falta grid*/
+#imagen {
+    display: grid; /*utilizamos grid para poder centrar todos los elementos con justify*/
+}
+#imagen img {
+    justify-self: center;
+    width: 70vw; /* ponemos la imagen en "Viewport width" para que 
+                varie el tamaño según el dispositivo*/
+}
+.boton {
+    display: grid;
+}
+.boton a{
+    justify-self: center;
+    padding: 0.5em 1em;
+    margin-bottom: 2em;
+    text-transform: uppercase;
+    transition: all 0.2s; /* lo que tarda en hacer el cambio de color */
+    font-size: 20px;
+    border: 2px solid darkgray;
+    color: darkgray;
+    text-decoration: none;
+}
+.boton a:hover { /* le decimos que cambie de color cuando pase por encima */
+    background-color: darksalmon;
+    border: 2px solid darksalmon;
+    color: white;
+}
+
+/*-------------------------------------------version tablet------------------------------------*/
+@media (min-width:600px){ /*cuando la pantalla llega a 600px se carga este CSS*/
+   
+    /*--------------------------inicio----------------------------------*/
+    body > div{
+        background-image: url(../Imagenes/Inicio_Tablet.png); /*cambiamos la imagen del background*/
+    }
+    #texto1 {
+        padding: 1%;
+        padding-top: 10em;
+    }
+
+    #texto2 {
+        justify-self: center;
+        padding: 1%;
+    }
+
+ /* ---------------Seción informacion---------------*/
+
+    #informacion {
+        display:flex; /*utilizamos el flex para poner los elementos en linea horizontal*/
+        justify-content: space-between; /*les damos espacio entre ellos*/
+        background-color: whitesmoke;
+    }
+ 
+ /*----------------------servicios---------------------------*/
+    .iconos {
+        grid-template-areas: "a b c" /*le damos un grid areas */
+                            "d e f";
+        justify-content: center; 
+    }
+
+    .iconos  div {
+        width: 35vw;
+    }
+
+    #imagen img {
+        width: 50vw;
+    }
+}
+
+/*-------------------------------Versión Web-------------------------------------*/
+@media only screen and (min-width:1200px){
+    
+/*--------------------------inicio----------------------------------*/
+    body > div{
+        background-image: url(../Imagenes/Inicio.jpg);   
+    }
+
+    #texto1 {
+        justify-self: right;
+        margin-right: 6em;
+    }
+
+    #texto2 {
+        justify-self: right;
+    }
+
+    #btn_cita {
+        justify-self: right;
+        margin-bottom: 2.5em;
+        margin-right: 7em;
+    }
+
+/* ---------------Seción informacion---------------*/
+    #informacion {
+        position: absolute;
+        display: inline-flex; /*usamos el inline-flex para alinear en horizontal*/
+            top: 650px;
+        box-shadow: 2px 2px 10px #666; /* Le ponemos un sombrado al contenedor
+                                            para dar sensación de volumen*/
+        width: 60vw;
+        margin-left: 15em;
+        padding-left: 3em;
+        padding-right: 3em;
+        background-color: white;
+    }
+
+/*----------------------servicios---------------------------*/
+
+    #servicios {
+        margin-top: 12em;
+    }
+    #servicios h2 {
+        font-size: 35px;
+    }
+    #padre {
+        display: grid;
+        grid-template-areas: "iconos imagen";
+    }
+    .iconos {
+        grid-area: iconos;
+    }
+    .iconos div {
+        width: 20vw;
+    }
+    .item {
+        width: 20vw;
+    }
+    #imagen {
+        grid-area: imagen;
+    }
+    #imagen img {
+        width: 30vw;
+    }
+    .btn_servicios {
+        margin-top: 2em;
+    }
+}
+
+
+
+
+    

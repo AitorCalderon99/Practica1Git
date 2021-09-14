@@ -1,0 +1,200 @@
+ /*-------------------- VERSION MOVIL -------------------------------------*/
+ 
+ /*---------------------- inicio -----------------*/
+#nosotros {
+    display: grid;
+}
+
+.nosotros h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 0%;
+    margin-top: 40px;
+}
+
+.nosotros h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+
+}
+
+ .historia p {
+    color: gray;
+    text-align: center;
+    margin: 1em;
+}
+
+ .imagen {
+    display: grid;
+    margin-bottom: 70px;
+}
+
+ .imagen img {
+    width: 300px;
+    justify-self: center;
+}
+
+/*------------------ Diferencias------------------*/
+
+.diferencias {
+    background-color: royalblue;
+    display: list-item;
+}
+
+.diferencias h2 {
+    font-size: 25px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.padre > div {
+    display: grid;
+
+}
+
+.padre > div > img{
+    justify-self: center;
+}
+
+.padre > div > h4{
+    justify-self: center;
+    color: white;
+}
+
+.padre > div > p{
+    justify-self: center;
+    color: white;
+    text-align: center;
+    width: 300px;
+}
+
+/*------------ Nuestro Equipo------------*/
+
+#equipo h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+}
+
+.contenedor_trabajadores div{
+    display: grid;
+    margin: 5%;
+    background-color:whitesmoke;
+}
+
+.contenedor_trabajadores img{
+    justify-self: center;
+    padding-top: 30px;
+    width: 165px;
+    height: 150px;
+}
+
+.contenedor_trabajadores h4,.contenedor_trabajadores p{
+    color: gray;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+ /*-------------------------------------------version tablet------------------------------------*/
+@media (min-width:600px){
+  
+    .nosotros {
+        display: grid;
+        grid-template-areas:    "h1 h1"
+                                "a b";
+    }
+
+    .nosotros h1 {
+        grid-area: h1;
+    }
+
+    .historia {
+        grid-area: a;
+        width: 300px;
+        margin-top: 50px;
+        margin-left: 5%;
+    }
+
+    .imagen {
+        grid-area: b;  
+    }
+
+    .imagen img {
+        width: 400px;
+        margin-top: 100px;
+        align-self: center;
+    }
+
+/*------------- Diferencias----------------------*/
+
+    .diferencias h2{
+        margin-top: 50px;
+    }
+
+    .padre {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .padre > div {
+        margin-top: 30px;
+    }
+
+    .item3, .item4 {
+        margin-bottom: 50px;
+    }
+
+    /*-------------- Equipo -------------------*/
+    
+    .contenedor_trabajadores {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*-------------------------------Versión Web-------------------------------------*/
+@media only screen and (min-width:1200px){
+    
+/*--------------------------inicio----------------------------------*/
+
+    .nosotros {
+        justify-content: center;
+    }
+
+    .historia {
+        width: 600px;
+    }
+
+    .p_historia {
+        text-align: left;
+    }
+
+    .imagen img {
+        width: 600px;
+        margin-left: 2em;
+    }
+   
+/*------------- Diferencias---------------------*/   
+
+    .padre {
+        justify-content: center;
+        grid-template-columns: repeat(4, 300px);
+        column-gap: 2em; /* le ponemos espacio entre las columnas*/
+        
+    }
+
+    .padre > div { /*con este selector nos ahorramos poner clases*/
+        height: 302px;
+    }
+
+    .padre > div > p {
+        height: 95px;
+        width: 250px;
+    }
+
+/*----------- Nuestro equipo --------------*/
+    .contenedor_trabajadores {
+        justify-content: center;
+        grid-template-columns: repeat(4, 300px);
+        column-gap: 20px;
+    }
+}
