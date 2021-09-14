@@ -87,6 +87,12 @@ h4 {
     text-decoration: none; /* Se le quita la decoración del enlace por defecto*/
 }
 
+li.submenu{
+    display: flex;
+    float: left;
+    color: red;
+}
+
 .site-nav a:hover,
 .site-nav a:focus{ /*cuando pasemos por encima o hagamos foco en él*/
     color: darksalmon;
