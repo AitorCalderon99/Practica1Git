@@ -25,6 +25,7 @@ body > div{
     padding: 1em;
     justify-self: center; /*centramos el boton en horizontal*/
     align-self: center;
+    border-radius: 01.5em;
     text-transform: uppercase;
     transition: all 0.2s; /* lo que tarda en hacer el cambio de color */
     font-size: 20px;
