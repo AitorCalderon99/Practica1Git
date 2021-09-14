@@ -100,6 +100,7 @@ span{
     justify-self: center;
     padding: 0.5em 1em;
     margin-bottom: 2em;
+    border-radius: 01.5em;
     text-transform: uppercase;
     transition: all 0.2s; /* lo que tarda en hacer el cambio de color */
     font-size: 20px;
