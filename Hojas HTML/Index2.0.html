@@ -10,24 +10,29 @@
         maximum-scale=1, minimum-scale=1">
         <!-- Cargamos las hojas de estilo que va a utilizar la página-->
         <link rel="stylesheet" href="../Hojas CSS/CSS_Index-barra.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <!--llama todos los iconos de fontawesome-->
     </head>
     <body>
+        <span class="nav-bar" id="btnmenu"><i class="fas fa-bars"></i> Menú</span>
         <header>
-            <nav class="nav-bar">
-                <ul>
-                    <li><a href=""></a>Home</li>
-                        <ul>
-                            <li><a href="">Horario</a></li>
-                            <li><a href="">Ventajas</a></li>
-                            <li><a href="">Citas</a></li>
-                            <li><a href="">ubicacion</a></li>
+            <nav class="main-nav">
+                <ul class="menu" id="menu">
+                    <li class="menu__item"><a href="" class="menu__link submenu-btn">Inicio
+                     <i class="fas fa-chevron-down"></i></li></a>
+                        <ul class="submenu">
+                            <li class="menu__item"><a href="" class="menu__link">Horario</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Ventajas</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Citas</a></li>
+                            <li class="menu__item"><a href="" class="menu__link">Precios</a></li>
                         </ul>
-                    <li><a href="">Servicios</a></li>
-                    <li><a href="">Nosotros</a></li>
-                    <li><a href="">Medioambiente</a></li>
-                    <li><a href="">Contacto</a></li>
+                    <li class="menu__item"><a href="" class="menu__link"></a>Nosotros</li>
+                    <li class="menu__item"><a href="" class="menu__link"></a>Productos</li>
+                    <li class="menu__item"><a href="" class="menu__link"></a>Servicios</li>
+                    <li class="menu__item"><a href="" class="menu__link"></a>Contacto</li>
                 </ul>
             </nav>
+            <script src="menu.js"></script>
         </header>
     </body>
 </html>
