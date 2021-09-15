@@ -22,6 +22,7 @@ body {
     background: #555;
     width: 100%;
     margin-left: -100%;
+    transition: all 0.5s;
 }
 .menu-link {
     display: block;
@@ -40,6 +41,9 @@ body {
     background: #333;
     padding-left: 50px;
 }
+.mostrar {
+    margin-left: 0;
+}
 
 
 
@@ -55,9 +59,18 @@ body {
         position: relative;
     }
     .submenu {
-        position: relative;
+        position: absolute;
         top: 60px;
         width: 200px;
+        overflow: visible;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .container-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+
     }
 
 }
